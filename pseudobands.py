@@ -306,10 +306,12 @@ def pseudoband(qshift, blocks_v, blocks_c, ifmax, params_from_parabands, fname_i
         f_out = h5py.File(fname_out, 'w')
         logger.info(f'fname_in = {fname_in}\n fname_out = {fname_out}\n ')
     elif qshift == 1:
+        nc = -1
         f_in = h5py.File(fname_in_q, 'r')
         f_out = h5py.File(fname_out_q, 'w')
         logger.info(f'fname_in = {fname_in_q}\n fname_out = {fname_out_q}\n ')
     elif qshift == 2:
+        nc = -1
         f_in = h5py.File(fname_in_NNS, 'r')
         f_out = h5py.File(fname_out_NNS, 'w')
         logger.info(f'fname_in = {fname_in_NNS}\n fname_out = {fname_out_NNS}\n ')
