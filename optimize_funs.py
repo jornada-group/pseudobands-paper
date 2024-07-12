@@ -68,12 +68,12 @@ def optimize(E0=1, Emax=10, nspbps=1, nslice=10):
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         
-        min_dim = fsolve(lambda x: B * x * np.sqrt(E0 + x/2) - 1, 4)
-        low = max(fsolve(lambda x: alpha(x, E0, Emax, nspbps, nslice)*np.exp(x) 
-                     - max(min_dim), .2*np.ones(3), maxfev=1000))
-        high = max(fsolve(lambda x: B * w(x, nslice, E0, Emax, nspbps, nslice) 
-                      * np.sqrt(Ebar(x, nslice, E0, Emax, nspbps, nslice)) - 1,
-                      .2*np.ones(3), maxfev=1000))
+        # min_dim = fsolve(lambda x: B * x * np.sqrt(E0 + x/2) - 1, 4)
+        # low = max(fsolve(lambda x: alpha(x, E0, Emax, nspbps, nslice)*np.exp(x) 
+        #              - max(min_dim), .2*np.ones(3), maxfev=1000))
+        # high = max(fsolve(lambda x: B * w(x, nslice, E0, Emax, nspbps, nslice) 
+        #               * np.sqrt(Ebar(x, nslice, E0, Emax, nspbps, nslice)) - 1,
+        #               .2*np.ones(3), maxfev=1000))
    
         tol=1e-9
         bnds = (tol, 1-tol)
